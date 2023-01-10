@@ -65,3 +65,5 @@ function articleDisplay (kanapModelName, kanapImgUrl, KanapDescription, kanapId,
 
 
 
+
+

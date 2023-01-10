@@ -18,14 +18,14 @@ fetch (`http://localhost:3000/api/products/${productid}`)
        console.log(productData.price);
         // affichages des informations
       
-        productDisplay(productData.imageUrl, productData.altTxt, productData.name);
+        productDisplay(productData.imageUrl, productData.altTxt, productData.name, productData.price);
 
             
 
 });
 
 
-function productDisplay(kanapImgUrl, kanapAltTxt, productName){
+function productDisplay(kanapImgUrl, kanapAltTxt, productName, productPrice){
     let divImgHtml= document.getElementsByClassName ("item__img")[0];
 
     //ajout de l'image
@@ -34,8 +34,17 @@ function productDisplay(kanapImgUrl, kanapAltTxt, productName){
     divImgHtml.appendChild(imgHtml);
     imgHtml.src = kanapImgUrl;
     imgHtml.setAttribute('alt', kanapAltTxt);
-    let h1ProductNameHtml = document.getElementById("title")
+
+    //ajout des nom des kanapés
+
+    let h1ProductNameHtml = document.getElementById("title");
     h1ProductNameHtml.textContent = productName
+
+    //ajout des prix
+
+    let spanPruductPriceHtml = document.getElementById("price");
+    spanPruductPriceHtml.textContent = productPrice
+
 
 }
 
